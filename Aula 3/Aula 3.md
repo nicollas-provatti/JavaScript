@@ -185,16 +185,4 @@ Executa imediatamente após a definição.
 })();
 ```
 
-## Função que Lida com Diferentes Tipos de Dados
-Uma função pode tratar diferentes tipos de entrada.
-
-```javascript
-function tipoDeDado(valor) {
-    return `O tipo do valor é ${typeof valor}`;
-}
-console.log(tipoDeDado(10));
-console.log(tipoDeDado("Texto"));
-console.log(tipoDeDado(true));
-```
-
 ---
