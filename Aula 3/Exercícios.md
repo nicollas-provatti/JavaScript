@@ -49,5 +49,3 @@ Crie um programa que simula uma **calculadora automática** que executa operaç�
 
 ## 5. **DESAFIO – Função Geradora de CPF Aleatório**
 Crie uma função chamada **gerarCPF** que gera um CPF aleatório no formato `"XXX.XXX.XXX-XX"`, onde cada `X` é um número entre `0` e `9`.
-
-🚀 **Desafio:** Tente implementar a lógica correta para calcular os dígitos verificadores do CPF!
