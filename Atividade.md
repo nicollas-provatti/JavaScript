@@ -26,7 +26,15 @@
 
 11. **Aumento Salarial:** Crie uma função que calcule o aumento salarial de um funcionário com base em seu plano de trabalho (A, B ou C), onde cada plano oferece uma porcentagem de aumento diferente.
 
-12. **Cardápio da Lanchonete:** Implemente um sistema de pedidos para uma lanchonete. Use a estrutura `switch` para calcular o valor total do pedido com base no código do item e na quantidade.
+12. **Cardápio da Lanchonete:** Implemente um sistema de pedidos para uma lanchonete. Use a estrutura `switch` para calcular o valor total do pedido com base no código do item e na quantidade.  
+| Código | Descrição do Produto | Preço |
+|--------|----------------------|-------|
+| 100    | Cachorro Quente      | R$ 3,00|
+| 200    | Hambúrguer Simples   | R$ 4,00|
+| 300    | Cheeseburguer        | R$ 5,50|
+| 400    | Bauru                | R$ 7,50|
+| 500    | Refrigerante         | R$ 3,50|
+| 600    | Suco                 | R$ 2,80|
 
 13. **Caixa Eletrônico:** Simule um caixa eletrônico que informa a quantidade mínima de notas necessárias para um determinado valor, utilizando notas de 100, 50, 10, 5 e 1 real.
 
