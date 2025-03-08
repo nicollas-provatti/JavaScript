@@ -27,8 +27,7 @@ Partindo daí elabore uma função que recebe um ano e calcula se ele é ano bis
 
 10. Um homem decidiu ir à uma revenda comprar um carro. Ele deseja comprar um carro hatch, e a revenda possui, além de carros hatch, sedans, motocicletas e caminhonetes. Utilizando uma estrutura switch, caso o comprador queira o hatch, retorne: “Compra efetuada com sucesso”. Nas outras opções, retorne: “Tem certeza que não prefere este modelo?”. Caso seja especificado um modelo que não está disponível, retorne no console: “Não trabalhamos com este tipo de automóvel aqui”.
 
-11. Um funcionário irá receber um aumento de acordo com o seu plano de
-trabalho, de acordo com a tabela abaixo:
-Plano A: aumento de 10%
-Plano B: aumento de 15%
-Placo C: aumento de 20%
+11. Um funcionário irá receber um aumento de acordo com o seu plano de trabalho, de acordo com a tabela abaixo:
+Plano A: aumento de 10%  
+Plano B: aumento de 15%  
+Placo C: aumento de 20%  
