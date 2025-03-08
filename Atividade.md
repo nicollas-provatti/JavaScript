@@ -33,14 +33,14 @@ Plano B: aumento de 15%
 Placo C: aumento de 20%  
 
 12. O cardápio de uma lanchonete é o seguinte:  
-| Código | Descrição do Produto    | Preço   |
-|--------|-------------------------|---------|
-| 100    | Cachorro Quente         | R$ 3,00 |
-| 200    | Hambúrguer Simples      | R$ 4,00 |
-| 300    | Cheeseburguer           | R$ 5,50 |
-| 400    | Bauru                   | R$ 7,50 |
-| 500    | Refrigerante            | R$ 3,50 |
-| 600    | Suco                    | R$ 2,80 |  
+| Código | Descrição do Produto    | Preço   |  
+|--------|-------------------------|---------|  
+| 100    | Cachorro Quente         | R$ 3,00 |  
+| 200    | Hambúrguer Simples      | R$ 4,00 |  
+| 300    | Cheeseburguer           | R$ 5,50 |  
+| 400    | Bauru                   | R$ 7,50 |  
+| 500    | Refrigerante            | R$ 3,50 |  
+| 600    | Suco                    | R$ 2,80 |    
 Implemente uma função que receba como parâmetros o código do item pedido, a quantidade e calcule o valor a ser pago por aquele lanche. Considere que a cada execução somente será calculado um item. Use o comando switch. Crie um caso default para produto não existente
 
 13. Crie um programa para informar quais e quantas notas são necessárias para entregar o mínimo de cédulas para um determinado valor informado pelo usuário considerando notas de R$ 100, R$ 50, R$ 10 e R$ 5 e R$ 1. Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar R$18, o programa deve informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1 nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1.
