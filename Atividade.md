@@ -32,7 +32,7 @@ Plano A: aumento de 10%
 Plano B: aumento de 15%  
 Placo C: aumento de 20%  
 
-12. O cardápio de uma lanchonete é o seguinte:
+12. O cardápio de uma lanchonete é o seguinte:  
 | Código | Descrição do Produto    | Preço   |
 |--------|-------------------------|---------|
 | 100    | Cachorro Quente         | R$ 3,00 |
