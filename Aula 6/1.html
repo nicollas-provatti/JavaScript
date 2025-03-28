@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando Eventos a Elementos</title>
+</head>
+<body>
+    <h1>Abordagem Inline</h1>
+    <button onclick="mostrarMensagem()">Clique Aqui</button>
+    <p id="mensagem"></p>
+
+    <script>
+        function mostrarMensagem() {
+            document.getElementById("mensagem").innerHTML = "Botão clicado!";
+        }
+
+        // Mistura HTML com JavaScript, dificultando a manutenção.
+        // Não permite adicionar múltiplos manipuladores de evento ao mesmo elemento.
+    </script>
+</body>
+</html>

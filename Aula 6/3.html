@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando Eventos a Elementos</title>
+</head>
+<body>
+    <h1>addEventListener()</h1>
+    <button id="botao">Clique Aqui</button>
+    <p id="mensagem"></p>
+
+    <script>
+        let botao = document.getElementById("botao");
+
+        botao.addEventListener("click", function () {
+            document.getElementById("mensagem").innerHTML = "Botão clicado!";
+        })
+
+        botao.addEventListener("click", function () {
+            document.getElementById("mensagem").innerHTML += " Botão clicado!";
+        })
+
+        // Pode ser usado para múltiplos eventos no mesmo elemento.
+        // Permite remover eventos com removeEventListener().
+        // Melhor prática para código modular e reutilizável.
+    </script>
+</body>
+</html>

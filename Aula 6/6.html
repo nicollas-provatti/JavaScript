@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Teclado</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            border: 2px solid darkblue;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+        #log {
+            width: 80%;
+            height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos de Teclado</h1>
+    <div id="box" tabindex="0">Clique aqui e pressione uma tecla!</div>
+    <div id="log"></div>
+    
+    <script>
+        const box = document.getElementById("box");
+        const log = document.getElementById("log");
+
+        function logEvent(event) {
+            const message = `${event.type}: ${event.key} (Código: ${event.code})`;
+            const newLog = document.createElement("div");
+            newLog.textContent = message;
+            log.appendChild(newLog);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        box.addEventListener("keydown", logEvent);
+        box.addEventListener("keyup", logEvent);
+    </script>
+</body>
+</html>

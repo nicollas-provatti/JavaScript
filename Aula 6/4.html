@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando Eventos a Elementos</title>
+</head>
+<body>
+    <h1>removeEventListener()</h1>
+    <button id="botao">Clique Aqui</button>
+    <p id="mensagem"></p>
+
+    <script>
+        let botao = document.getElementById("botao");
+
+        function mostrarMensagem() {
+            document.getElementById("mensagem").innerHTML = "Botão clicado!";
+        }
+
+        botao.addEventListener("click", mostrarMensagem);
+
+        setTimeout(() => {
+            botao.removeEventListener("click", mostrarMensagem);
+            console.log("Evento removido.");
+        }, 5000)
+    </script>
+</body>
+</html>

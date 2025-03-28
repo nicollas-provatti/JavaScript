@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    <div class="set">
+        <button class="w drum">w</button>
+        <button class="a drum">a</button>
+        <button class="s drum">s</button>
+        <button class="d drum">d</button>
+        <button class="j drum">j</button>
+        <button class="k drum">k</button>
+        <button class="l drum">l</button>
+      </div>
+
+      <script>
+        addEventListener("keydown", function(event) {
+            if (event.key === 'w'){
+                let tom1 = new Audio("Drum Kit Completed/sounds/crash.mp3");
+                tom1.play();
+            }
+        })
+      </script>
+</body>
+</html>

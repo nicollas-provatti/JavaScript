@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando Eventos a Elementos</title>
+</head>
+<body>
+    <h1>Propriedade de Evento no JavaScript</h1>
+    <button id="botao">Clique Aqui</button>
+    <p id="mensagem"></p>
+
+    <script>
+        let botao = document.getElementById("botao");
+
+        botao.onclick = function() {
+            document.getElementById("mensagem").innerHTML = "Botão clicado!";
+        }
+
+        // Se atribuirmos outra função a botao.onclick, a anterior será sobrescrita.
+    </script>
+</body>
+</html>

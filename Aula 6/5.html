@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Eventos no DOM</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            border: 2px solid darkblue;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+        #log {
+            width: 80%;
+            height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos de Mouse</h1>
+    <div id="box">Interaja comigo!</div>
+    <div id="log"></div>
+
+    <script>
+        const box = document.getElementById("box");
+        const log = document.getElementById("log");
+
+        function logEvent(event) {
+            //console.log(event);
+            const message = `${event.type} at (${event.clientX}, ${event.clientY})`;
+            const newLog = document.createElement("div");
+            newLog.textContent = message;
+            log.appendChild(newLog);
+            log.scrollTop = log.scrollHeight; 
+        }
+
+        box.addEventListener("click", logEvent);
+        box.addEventListener("dblclick", logEvent);
+        box.addEventListener("mousedown", logEvent);
+        box.addEventListener("mouseup", logEvent);
+        box.addEventListener("mousemove", logEvent);
+        box.addEventListener("mouseenter", logEvent);
+        box.addEventListener("mouseleave", logEvent);
+    </script>
+</body>
+</html>

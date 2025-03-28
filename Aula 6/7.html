@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+</head>
+<body>
+    <button class="btn">A</button>
+    <button class="btn">B</button>
+    <button class="btn">C</button>
+    <script>
+        let numeroDeBotoes = document.querySelectorAll(".btn").length;
+        
+        for (let i = 0; i < numeroDeBotoes; i++) {
+            document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+                let textoBotao = this.innerHTML;
+                console.log(textoBotao);
+            })
+        }
+
+        document.addEventListener("keydown", function(event) {
+            console.log(event);
+            console.log(event.key);
+            console.log(event.type);
+        })
+    </script>
+</body>
+
+</html>
