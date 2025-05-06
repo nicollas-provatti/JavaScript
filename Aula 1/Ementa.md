@@ -1,5 +1,11 @@
 # Curso de JavaScript - Ementa
 
+## Cronograma
+**Feriados:** 12/06<br>
+**Última Aula:** 20/06<br>
+**Avalição:** 24/06<br>
+**Projeto:** 01/07 a 03/07<br>
+
 ## Módulo 1: Fundamentos de JavaScript
 
 ### Aula 1 - Introdução
