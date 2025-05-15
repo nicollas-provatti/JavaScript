@@ -2,7 +2,7 @@
 
 ---
 
-## Exercício 1 - `Verificador de Idade
+## Exercício 1 - Verificador de Idade
 **Descrição:** Crie uma função chamada verificarIdade que receba dois parâmetros: nome (com valor padrão "visitante") e idade. A função não deve retornar nenhum valor, apenas exibir uma mensagem com alert informando:
 
 - "Olá, [nome]! Você é menor de idade." se a idade for menor que 18.
