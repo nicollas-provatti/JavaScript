@@ -3,17 +3,17 @@
 ---
 
 ## Exercício 1 - Verificador de Idade
-**Descrição:** Crie uma função chamada verificarIdade que receba dois parâmetros: nome (com valor padrão "visitante") e idade. A função não deve retornar nenhum valor, apenas exibir uma mensagem com alert informando:
+**Descrição:** Crie uma função chamada `verificarIdade` que receba dois parâmetros: **nome** (com valor padrão "visitante") e **idade**. A função não deve retornar **nenhum valor**, apenas exibir uma mensagem com `alert` informando:
 
 - "Olá, [nome]! Você é menor de idade." se a idade for menor que 18.
 - "Olá, [nome]! Você é maior de idade." se a idade for 18 ou mais.
 
-Antes de exibir a mensagem, verifique se a idade informada é válida: ela não pode ser negativa nem ultrapassar um valor máximo definido (por exemplo, 120). O programa deve começar perguntando ao usuário, por meio de confirm, se ele deseja verificar uma idade. Enquanto a resposta for positiva, utilize prompt para solicitar o nome e a idade da pessoa, e chame a função verificarIdade. O processo deve se repetir até que o usuário decida encerrar.
+Antes de exibir a mensagem, verifique se a idade informada é válida: ela não pode ser negativa nem ultrapassar um valor máximo definido (por exemplo, 120). O programa deve começar perguntando ao usuário, por meio de `confirm`, se ele deseja verificar uma idade. Enquanto a resposta for positiva, utilize `prompt` para solicitar o **nome** e a **idade** da pessoa, e chame a função `verificarIdade`. O processo deve se repetir até que o usuário decida encerrar.
 
 ---
 
 ## Exercício 2 - Calculadora Simples 2
-**Descrição:** Crie uma função chamada calcular que recebe três parâmetros: dois números e um operador (+, -, *, /, %). A função deve retornar o resultado da operação correspondente. Defina valores padrões para os parâmetros para o caso do usuário não informá-los.
+**Descrição:** Crie uma função chamada `calcular` que recebe três parâmetros: dois **números** e um **operador** (`+`, `-`, `*`, `/`, `%`). A função deve retornar o resultado da operação correspondente. Defina valores padrões para os parâmetros para o caso do usuário não informá-los.
 
 ---
 
