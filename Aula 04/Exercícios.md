@@ -18,7 +18,7 @@ Antes de exibir a mensagem, verifique se a idade informada é válida: ela não 
 ---
 
 ## Exercício 3 - Saudação com Horário
-**Descrição:** Você está desenvolvendo uma funcionalidade para exibir uma saudação diferente dependendo da hora do dia. Crie uma **função anônima** atribuída à variável `mensagemDeBoasVindas` que receba o nome de uma pessoa e a hora atual (de 0 a 23).
+**Descrição:** Crie uma função anônima atribuída à variável `mensagemDeBoasVindas` que receba o nome de uma pessoa como parâmetro e exiba uma saudação personalizada com base no horário atual do sistema. Utilize o objeto `Date` junto com o método `getHours()` para determinar a hora do dia. Antes de chamar a função, solicite ao usuário que informe seu nome. A mensagem final deve combinar a saudação apropriada com o nome informado.
 
 A função deve retornar:
 - "Bom dia, [nome]!" se a hora estiver entre 6 e 11.
@@ -29,12 +29,12 @@ A função deve retornar:
 ---
 
 ## Exercício 4 - Cálculo de Desconto
-**Descrição:** Você está ajudando a montar um sistema de compras online. Crie uma **arrow function** chamada `calcularDesconto` que receba dois parâmetros: preco e porcentagemDesconto, e retorne o valor com desconto aplicado. Depois, calcule o preço final de um produto que custa R$ 200 com 10% de desconto.
+**Descrição:** Você está desenvolvendo um sistema de compras online e precisa criar uma arrow function chamada `calcularDesconto`, que receba dois parâmetros: **preco** e **porcentagemDesconto**. A função deve retornar o valor final do produto após a aplicação do desconto. Em seguida, permita que o usuário informe os dados de vários produtos e visualize o valor com desconto, repetindo o processo até que ele decida encerrar, por meio de uma pergunta como "Deseja calcular o desconto de outro produto? (sim/não)". Certifique-se de validar as entradas e exibir o resultado formatado de forma clara para o usuário.
 
 ---
 
 ## Exercício 5 - Processando dois Usuários
-**Descrição:** Você está criando uma função que vai exibir mensagens personalizadas para dois usuários.
-Crie uma função chamada `exibirMensagem` que receba dois nomes (ex: `nome1` e `nome2`) e uma **função de callback**. O callback deve ser aplicado individualmente a cada nome e as mensagens devem ser exibidas com `console.log`. Em seguida, utilize `exibirMensagem` com um callback que retorne "Olá, [nome]! Que bom ver você aqui!".
+**Descrição:** Você está desenvolvendo um sistema que exibe mensagens em etapas, com um pequeno atraso entre elas, simulando carregamento ou notificação gradual.
+Crie uma função chamada `executarComAtraso` que receba dois parâmetros: uma **mensagem** e uma **função callback**. A função deve exibir a mensagem após 2 segundos usando setTimeout, e depois que a mensagem for exibida, deve chamar a função de callback passada. A função callback pode exibir uma saudação final ao usuário.
 
 ---
