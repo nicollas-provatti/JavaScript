@@ -33,7 +33,7 @@ A função deve retornar:
 
 ---
 
-## Exercício 5 - Processando dois Usuários
+## Exercício 5 - Mensagem com Atraso
 **Descrição:** Você está desenvolvendo um sistema que exibe mensagens em etapas, com um pequeno atraso entre elas, simulando carregamento ou notificação gradual.
 Crie uma função chamada `executarComAtraso` que receba dois parâmetros: uma **mensagem** e uma **função callback**. A função deve exibir a mensagem após 2 segundos usando setTimeout, e depois que a mensagem for exibida, deve chamar a função de callback passada. A função callback pode exibir uma saudação final ao usuário.
 
