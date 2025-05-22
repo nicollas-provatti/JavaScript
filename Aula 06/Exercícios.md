@@ -13,13 +13,13 @@ const usuario = criarUsuario("Jorge", 17, "jorginho@hotmail.com");
 ---
 
 ## Exercício 2 - Atualizar Idade
-**Descrição:** Crie uma função chamada atualizarIdade que receba um **objeto** usuario e um **número** representando a nova idade do usuário. A função deve atualizar o valor da propriedade idade.
+**Descrição:** Crie uma função chamada `atualizarIdade` que receba um **objeto** usuario e um **número** representando a nova idade do usuário. A função deve atualizar o valor da propriedade idade.
 
 **Exemplo de uso:**
 ```js
 const usuario = { nome: "Marcos", idade: 19, email: "marquinhos@hotmail.com" };
 
-atualizarNome(usuario, 25);
+atualizarIdade(usuario, 25);
 
 console.log(usuario.idade);  
 // Resultado esperado: 25
