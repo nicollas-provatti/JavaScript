@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriedades do DOM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        p {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #p1 {
+            background-color: #e0f7fa;
+        }
+
+        #p2 {
+            background-color: #f1f8e9;
+        }
+
+        strong {
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">JavaScript é <strong>top</strong> demais!!</p>
+    <p id="p2">JavaScript é <strong>massa</strong> demais!!</p>
+    
+    <script>
+        // textContent
+        const paragrafo1 = document.getElementById("p1");
+        paragrafo1.textContent = "JavaScript é interativo demais!!";
+
+        // innerHTML
+        const paragrafo2 = document.getElementById("p2");
+        paragrafo2.innerHTML = "JavaScript é <strong>fácil</strong> demais!!";
+
+        // style
+        paragrafo1.style.color = "lightcoral";
+        paragrafo1.style.fontSize = "24px";
+        paragrafo1.style.backgroundColor = "black";
+
+        // EX.: 1, 2 e 3
+    </script>
+</body>
+</html>

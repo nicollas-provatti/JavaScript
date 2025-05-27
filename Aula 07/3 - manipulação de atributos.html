@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Atributos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+            color: #333;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #2196f3;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        a:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <a id="link" href="https://pt.wikipedia.org/wiki/JavaScript">Saiba Mais</a>
+
+    <script>
+        const tagLink = document.getElementById("link");
+
+        // getAttribute()
+        let link = tagLink.getAttribute("href");
+        
+        // setAttribute()
+        tagLink.setAttribute("href", "#");
+
+        // removeAttribute()
+        tagLink.removeAttribute("href");
+
+        // hasAttribute()
+        let temHref = tagLink.hasAttribute("href");
+    </script>
+</body>
+</html>

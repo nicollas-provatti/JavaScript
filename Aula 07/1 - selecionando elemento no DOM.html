@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando Elemento no DOM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #0057b7;
+            border-bottom: 2px solid #0057b7;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .texto {
+            background-color: #e1f5fe;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            background-color: #fff3e0;
+            padding: 10px;
+            margin-bottom: 6px;
+            border-radius: 5px;
+            list-style-type: square;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        script {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">JavaScript</h1>
+    <p class="texto">JavaScript é top demais!!</p>
+    <p class="texto">JavaScript é massa demais!!</p>
+    <ul>
+        <li name="item">Função</li>
+        <li name="item">Array</li>
+        <li name="item">Objeto</li>
+    </ul>
+
+    <script>
+
+        // Seleção por ID
+        const titulo = document.getElementById("titulo");
+
+        // Seleção por CLASS
+        const paragrafos = document.getElementsByClassName("texto");
+
+        // Seleção por TAG
+        const tituloTag = document.getElementsByTagName("h1");
+        const paragrafosTag = document.getElementsByTagName("p");
+        const paragrafo2 = document.getElementsByTagName("p")[1];
+
+        // Seleção por NAME
+        const itensPorName = document.getElementsByName("item");
+
+        // Seleção com SELECTOR
+        const tituloQuery = document.querySelector("#titulo");
+        const paragrafoQuery = document.querySelector(".texto");
+        const paragrafosTodos = document.querySelectorAll(".texto");
+        const itensTag = document.querySelectorAll("li");
+        const itensName = document.querySelectorAll("[name='item']");
+
+        // HTMLCollection vs NodeList
+
+        // paragrafos.forEach(paragrafo => console.log(paragrafo));
+
+        for (let paragrafo of paragrafos) {
+            console.log(paragrafo);
+        }
+
+        itensTag.forEach(item => console.log(item));
+
+        // itensTag.map(item => console.log(item));
+
+        const paragrafosArray = Array.from(paragrafos);
+        const itensArray = Array.from(itensTag);
+    </script>
+</body>
+</html>

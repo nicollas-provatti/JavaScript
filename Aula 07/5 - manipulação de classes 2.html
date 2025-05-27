@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            background-color: #fff8dc;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: background-color 0.4s ease, box-shadow 0.3s ease;
+        }
+
+        .ativo {
+            background-color: #ffe600;
+            box-shadow: 0 0 12px #ffea00;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #0077ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005fd1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <button onclick="alterarFundo()">Mudar cor</button>
+
+    <script>
+        const container = document.querySelector(".container");
+
+        function alterarFundo() {
+            container.classList.add("ativo");
+
+            if (container.classList.contains("ativo")) {
+                container.classList.remove("ativo");
+            }
+            else {
+                container.classList.add("ativo");
+            }
+
+            container.classList.toggle("ativo");
+        }
+    </script>
+</body>
+
+</html>
