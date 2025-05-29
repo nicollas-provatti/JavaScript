@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtro de Alunos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f5;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    li.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Buscar Aluno</h2>
+    <input type="text" id="campoBusca" placeholder="Digite um nome...">
+
+    <ul id="listaAlunos">
+      <li>André Oliveira</li>
+      <li>Bianca Souza</li>
+      <li>Carlos Lima</li>
+      <li>Daniela Costa</li>
+      <li>Eduardo Rocha</li>
+      <li>Fernanda Alves</li>
+      <li>Gabriel Martins</li>
+    </ul>
+  </div>
+
+  <script>
+    const campoBusca = document.getElementById("campoBusca");
+    const alunos = document.querySelectorAll("#listaAlunos li");
+
+    campoBusca.addEventListener("keyup", () => {
+      const termo = campoBusca.value.toLowerCase();
+
+      alunos.forEach(aluno => {
+        const nome = aluno.textContent.toLowerCase();
+
+        if (!nome.includes(termo)) {
+          aluno.classList.add("hidden");
+        } else {
+          aluno.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

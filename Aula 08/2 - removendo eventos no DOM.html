@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Removendo Eventos no DOM</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 20px 0;
+      border: none;
+      background-color: #2196F3;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1976D2;
+    }
+
+    #mensagem {
+      font-size: 18px;
+      color: #333;
+      background-color: #eef;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Removendo Eventos no DOM</h2>
+    <button id="btn">Clique Aqui</button>
+    <p id="mensagem">O evento será removido após 5 segundos.</p>
+  </div>
+
+  <script>
+    const botao = document.getElementById("btn");
+
+    function mostrarMensagem() {
+      document.getElementById("mensagem").innerHTML = "Botão clicado!";
+    }
+
+    botao.addEventListener("click", mostrarMensagem);
+
+    setTimeout(() => {
+      botao.removeEventListener("click", mostrarMensagem);
+      document.getElementById("mensagem").innerHTML = "Evento removido após 5 segundos.";
+      console.log("Evento removido.");
+    }, 5000);
+    
+  </script>
+</body>
+</html>

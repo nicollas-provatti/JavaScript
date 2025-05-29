@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Votação com Emojis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .votacao {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .emojis {
+      font-size: 40px;
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .contadores {
+      display: flex;
+      justify-content: space-around;
+      font-size: 18px;
+    }
+
+    button {
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      background-color: #2196f3;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #1976d2;
+    }
+
+    #btn-mais {
+        background-color: rgb(0, 201, 0);
+    } 
+    
+    #btn-mais:hover {
+        background-color: green;
+    }
+
+    #btn-menos {
+        background-color: red;
+        padding: 1.5px 8px;
+    }
+
+    #btn-menos:hover {
+        background-color: rgb(194, 0, 0);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="votacao">
+    <h2>Quantos anos você tem ?</h2>
+
+    <div class="emojis">
+      <span>😀</span>
+    </div>
+
+    <div class="contadores">
+      <p><strong>Idade:</strong> <span id="idade">0</span> anos</p>
+    </div>
+
+    <div>
+      <button id="btn-mais">+</button>
+      <button id="btn-menos">-</button>
+    </div>
+  </div>
+
+  <script>
+    const idade = document.getElementById("idade");
+    const btnMais = document.getElementById("btn-mais");
+    const btnMenos = document.getElementById("btn-menos");
+
+    btnMais.addEventListener("click", () => {
+        let contador = parseInt(idade.textContent);
+        idade.textContent = contador + 1;
+    });
+
+    btnMenos.addEventListener("click", () => {
+        let contador = parseInt(idade.textContent);
+
+        if (contador <= 0) {
+            idade.textContent = 0;
+        }
+        else {
+            idade.textContent = contador - 1;
+        } 
+    });
+  </script>
+</body>
+</html>

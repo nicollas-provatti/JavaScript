@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tipos de Eventos 2: Teclado</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    #box {
+      width: 320px;
+      height: 200px;
+      margin: 0 auto;
+      background-color: #e0f0ff;
+      border: 2px solid #0077cc;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #003366;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      outline: none;
+    }
+
+    #box:focus {
+      background-color: #cce4ff;
+      border-color: #005fa3;
+    }
+
+    #log {
+      width: 90%;
+      max-width: 600px;
+      height: 180px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin: 30px auto 0;
+      background: #ffffff;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #log div {
+      font-family: monospace;
+      font-size: 14px;
+      color: #333;
+      padding: 2px 0;
+      border-bottom: 1px dotted #eaeaea;
+    }
+  </style>
+</head>
+<body>
+  <h1>Eventos de Teclado</h1>
+  <div id="box" tabindex="0">Clique aqui e pressione uma tecla!</div>
+  <div id="log"></div>
+
+  <script>
+    const box = document.getElementById("box");
+    const log = document.getElementById("log");
+
+    function logEvent(event) {
+      const message = `${event.type}: "${event.key}" (Código: ${event.code})`;
+      const newLog = document.createElement("div");
+      newLog.textContent = message;
+      log.appendChild(newLog);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    box.addEventListener("keydown", logEvent);
+    box.addEventListener("keyup", logEvent);
+    box.addEventListener("keypress", logEvent);
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo: Cadastro de Usuário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Cadastro de Usuário</h2>
+    <form id="formUsuario">
+      <input type="text" id="nomeUsuario" placeholder="Nome completo" required />
+      <input type="email" id="emailUsuario" placeholder="E-mail" required />
+      <input type="password" id="senhaUsuario" placeholder="Senha" required />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <div id="mensagem"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("formUsuario");
+    const nome = document.getElementById("nomeUsuario");
+    const email = document.getElementById("emailUsuario");
+    const senha = document.getElementById("senhaUsuario");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nomeValor = nome.value;
+      const emailValor = email.value;
+      const senhaValor = senha.value;
+
+      mensagem.innerHTML = `
+        Usuário cadastrado com sucesso! <br><br>
+        <strong>Nome:</strong> ${nomeValor} <br>
+        <strong>E-mail:</strong> ${emailValor} <br>
+        <strong>Senha:</strong> ${"*".repeat(senhaValor.length)}
+      `;
+      form.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tipos de Eventos 1: Mouse</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    #box {
+      width: 320px;
+      height: 200px;
+      background-color: #cce5ff;
+      border: 2px solid #0056b3;
+      margin: 0 auto;
+      border-radius: 12px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    #box:hover {
+      background-color: #b3daff;
+    }
+
+    #log {
+      width: 90%;
+      max-width: 600px;
+      height: 180px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin: 30px auto 0;
+      background: #ffffff;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    #log div {
+      padding: 2px 0;
+      font-size: 14px;
+      color: #333;
+      font-family: monospace;
+      border-bottom: 1px dotted #eee;
+    }
+  </style>
+</head>
+<body>
+  <h1>Eventos de Mouse</h1>
+  <div id="box">Interaja comigo!</div>
+  <div id="log"></div>
+
+  <script>
+    const log = document.getElementById("log");
+
+    function logEvent(event) {
+      const message = `${event.type} em (${event.clientX}, ${event.clientY})`;
+      const newLog = document.createElement("div");
+      newLog.textContent = message;
+      log.appendChild(newLog);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    // box.addEventListener("click", logEvent);
+    // box.addEventListener("dblclick", logEvent);
+    // box.addEventListener("mousedown", logEvent);
+    // box.addEventListener("mouseup", logEvent);
+    // box.addEventListener("mousemove", logEvent);
+    //box.addEventListener("mouseenter", logEvent);
+    // box.addEventListener("mouseleave", logEvent);
+    
+  </script>
+</body>
+</html>
