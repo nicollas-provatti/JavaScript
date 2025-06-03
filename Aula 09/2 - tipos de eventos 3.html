@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tipos de Eventos 3: Formulários</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafc;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      width: 320px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background-color: #f2f2f2;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 12px 0 4px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #0077cc;
+      background-color: #e9f5ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #log {
+      width: 90%;
+      max-width: 600px;
+      height: 180px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin: 30px auto 0;
+      background: #fff;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #log div {
+      font-family: monospace;
+      font-size: 14px;
+      color: #333;
+      padding: 2px 0;
+      border-bottom: 1px dotted #eaeaea;
+    }
+  </style>
+</head>
+<body>
+  <h1>Eventos de Formulário</h1>
+
+  <form id="meuFormulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" name="idade">
+
+    <label for="genero">Gênero:</label>
+    <select id="genero" name="genero">
+      <option value="">Selecione</option>
+      <option value="feminino">Feminino</option>
+      <option value="masculino">Masculino</option>
+      <option value="outro">Outro</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="log"></div>
+
+  <script>
+    const form = document.getElementById('meuFormulario');
+    const inputs = form.querySelectorAll('input, select');
+    const log = document.getElementById('log');
+
+    function adicionarLog(mensagem) {
+      const entrada = document.createElement('div');
+      entrada.textContent = mensagem;
+      log.appendChild(entrada);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Impede envio real
+      adicionarLog('Formulário enviado!');
+    });
+
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        adicionarLog(`input: ${input.name} = ${input.value}`);
+      });
+
+      /* input.addEventListener('change', () => {
+        adicionarLog(`change: ${input.name} = ${input.value}`);
+      }); */
+
+      /* input.addEventListener('focus', () => {
+        adicionarLog(`focus: ${input.name}`);
+      }); */
+
+      input.addEventListener('blur', () => {
+        adicionarLog(`blur: ${input.name}`);
+      });
+    });
+  </script>
+</body>
+</html>

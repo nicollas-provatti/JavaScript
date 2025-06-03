@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo: Cadastro de Usuário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 15px;
+    }
+
+    #mensagem p {
+      margin: 0;
+    }
+
+    #mensagem p:nth-child(1) {
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Cadastro de Usuário</h2>
+    <form id="formUsuario">
+      <input type="text" id="nomeUsuario" placeholder="Nome completo"/>
+      <input type="email" id="emailUsuario" placeholder="E-mail"/>
+      <input type="password" id="senhaUsuario" placeholder="Senha"/>
+      <button type="submit">Cadastrar</button>
+    </form>
+    <div id="mensagem"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("formUsuario");
+    const nome = document.getElementById("nomeUsuario");
+    const email = document.getElementById("emailUsuario");
+    const senha = document.getElementById("senhaUsuario");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const nomeValor = nome.value;
+      const emailValor = email.value;
+      const senhaValor = senha.value;
+    
+      mensagem.innerHTML = `
+        <p>Usuário cadastrado com sucesso!</p>
+        <p><strong>Nome:</strong> ${nomeValor}</p>
+        <p><strong>Email:</strong> ${emailValor}</p>
+        <p><strong>Senha:</strong> ${"*".repeat(senhaValor.length)}</p>
+      `
+      form.reset(); 
+    });
+  </script>
+</body>
+</html>
