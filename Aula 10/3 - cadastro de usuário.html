@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo: Criar Elemento com JS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      flex: 1 1 200px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .nome {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+
+    .email {
+      margin: 0 0 15px 0;
+      color: #666;
+    }
+
+    .remove {
+      background-color: #dc3545;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+
+    .card button.remove:hover {
+      background-color: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Adicionar Usuário</h1>
+
+  <div id="form" class="form">
+    <input type="text" id="nome" placeholder="Digite o nome" />
+    <input type="email" id="email" placeholder="Digite o email" />
+  </div>
+
+  <div class="buttons">
+    <button id="btn-adicionar">Adicionar</button>
+  </div>
+
+  <div id="container">
+    
+  </div>
+
+  <template id="user-template">
+    <div class="card">
+      <h3 class="nome">Nome: João</h3>
+      <p class="email">Email:joao@email.com</p>
+      <button class="remove">Remover</button>
+    </div>
+  </template>
+
+  <script>
+    const inputNome = document.getElementById("nome");
+    const inputEmail = document.getElementById("email");
+    const btnAdd = document.getElementById("btn-adicionar");
+    const divUsuarios = document.getElementById("container");
+
+    function pegarDadosForm() {
+        let nome = inputNome.value.trim();
+        let email = inputEmail.value.trim();
+
+        if (!nome || !email) {
+            alert("Por favor, preencha nome e email.");
+            return null;
+        }
+
+        inputNome.value = "";
+        inputEmail.value = "";
+        inputNome.focus();
+
+        return { nome, email };
+    }
+
+    function adicionarComCreate() {
+        const dados = pegarDadosForm();
+
+        if (!dados) {
+            return;
+        }
+
+        const div = document.createElement("div");
+        div.classList.add("card");
+
+        const h3 = document.createElement("h3");
+        h3.classList.add("nome");
+        h3.textContent = dados.nome;
+
+        const p = document.createElement("p");
+        p.classList.add("email");
+        p.textContent = dados.email;
+
+        const button = document.createElement("button");
+        button.classList.add("remove");
+        button.textContent = "Remover";
+
+        button.addEventListener("click", () => div.remove());
+
+        div.appendChild(h3);
+        div.appendChild(p);
+        div.appendChild(button);
+
+        divUsuarios.appendChild(div);
+    }
+
+    function adicionarComInnerHTML() {
+        const dados = pegarDadosForm();
+
+        if (!dados) {
+            return;
+        }
+
+        divUsuarios.innerHTML += `
+            <div class="card">
+                <h3 class="nome">${dados.nome}</h3>
+                <p class="email">${dados.email}</p>
+                <button class="remove">Remover</button>
+            </div>
+        `;
+
+        const buttons = divUsuarios.querySelectorAll(".remove");
+      
+        buttons.forEach(btn => {
+            if (!btn.onclick) {
+                btn.onclick = (e) => e.target.closest(".card").remove();
+            }
+        });
+    }
+
+    function adicionarComTemplate() {
+        const dados = pegarDadosForm();
+
+        if (!dados) {
+            return;
+        }
+
+        const template = document.getElementById("user-template");
+        const clone = template.content.firstElementChild.cloneNode(true);
+
+        clone.querySelector(".nome").textContent = dados.nome;
+        clone.querySelector(".email").textContent = dados.email;
+
+        const btn = clone.querySelector(".remove");
+        btn.onclick = (e) => e.target.closest(".card").remove();
+
+        divUsuarios.appendChild(clone);
+    }
+
+    btnAdd.addEventListener("click", adicionarComInnerHTML);
+  </script>
+</body>
+</html>

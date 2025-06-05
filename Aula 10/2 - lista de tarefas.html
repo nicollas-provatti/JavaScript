@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de Tarefas Interativa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    #input-tarefa {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #007bff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    #btn-adicionar {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #btn-adicionar:hover {
+      background-color: #0056b3;
+    }
+
+    .lista-tarefas {
+      margin-top: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .lista-tarefas li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #e9f5ff;
+      margin-bottom: 8px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .lista-tarefas li span {
+      flex-grow: 1;
+      cursor: pointer;
+    }
+
+    .concluida span {
+      text-decoration: line-through;
+      color: #3c763d;
+    }
+
+    .concluida {
+      background-color: rgb(198, 255, 198) !important;
+    }
+
+    .btn-remover {
+      border: none;
+      background-color: lightcoral;
+      padding: 8px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-remover:hover {
+      background-color: rgb(231, 94, 94);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Tarefas</h1>
+
+  <input type="text" id="input-tarefa" placeholder="Digite uma nova tarefa" aria-label="Campo para digitar tarefa" />
+  <button id="btn-adicionar" type="button">Adicionar Tarefa</button>
+
+  <ul id="lista-tarefas" class="lista-tarefas" aria-label="Lista de tarefas">
+    
+  </ul>
+
+  <script>
+    const inputTarefa = document.getElementById('input-tarefa');
+    const btnAdicionar = document.getElementById('btn-adicionar');
+    const listaTarefas = document.getElementById('lista-tarefas');
+
+    function adicionarTarefa() {
+      const texto = inputTarefa.value.trim();
+      if (!texto) {
+        alert('Por favor, digite uma tarefa.');
+        return;
+      }
+      criarTarefa(texto);
+      inputTarefa.value = '';
+      inputTarefa.focus(); 
+    }
+
+    function criarTarefa(texto) {
+      const item = document.createElement('li');
+
+      const spanTexto = document.createElement('span');
+      spanTexto.textContent = texto;
+
+      spanTexto.addEventListener('click', () => {
+        item.classList.toggle('concluida');
+      });
+     
+      const btnRemover = document.createElement('button');
+      btnRemover.textContent = 'Remover';
+      btnRemover.classList.add("btn-remover");
+
+      btnRemover.addEventListener('click', () => {
+        item.remove();
+      });
+
+      item.appendChild(spanTexto);
+      item.appendChild(btnRemover);
+
+      listaTarefas.appendChild(item);
+    }
+
+    btnAdicionar.addEventListener('click', adicionarTarefa);
+
+    inputTarefa.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        adicionarTarefa();
+      }
+    });
+  </script>
+
+</body>
+</html>
