@@ -1,4 +1,4 @@
-# 📘 Aula 11 - Criação de Elementos via JS e LocalStorage
+# 📘 Aula 10 - Criação de Elementos
 
 ### 🔵 Navegando entre Elementos HTML
 O DOM permite que a gente navegue entre os elementos de uma página usando algumas propriedades que representam as relações entre eles — como pai, filho, irmão. Aqui estão as principais:
