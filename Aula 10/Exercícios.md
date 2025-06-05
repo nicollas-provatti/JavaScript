@@ -193,7 +193,6 @@ Na tag `<script>`, adicione uma função para ser executada quando o forumlário
 5. Adicionar essa `div` dentro da `div#listaLivros` usando `appendChild`.
 
 **Código Base:**
-```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -257,6 +256,13 @@ Na tag `<script>`, adicione uma função para ser executada quando o forumlário
       width: 220px;
     }
 
+    .livro img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
     .livro h3 {
       margin: 0;
       color: #2c3e50;
@@ -284,13 +290,14 @@ Na tag `<script>`, adicione uma função para ser executada quando o forumlário
       <option>Terror</option>
       <option>Aventura</option>
     </select>
+    <input type="url" id="imagem" placeholder="URL da imagem da capa">
     <button id="btn-add">Adicionar Livro</button>
   </div>
 
   <div class="livros" id="listaLivros"></div>
 
   <script>
-    // Sua função vai aqui
+    // Escreva o código aqui
   </script>
 
 </body>
