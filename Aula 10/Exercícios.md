@@ -193,7 +193,7 @@ Na tag `<script>`, adicione uma função para ser executada quando o forumlário
 5. Adicionar essa `div` dentro da `div#listaLivros` usando `appendChild`.
 
 **Código Base:**
-```
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
