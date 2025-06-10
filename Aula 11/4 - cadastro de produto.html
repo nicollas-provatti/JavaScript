@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produtos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      header {
+        padding: 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      form {
+        display: flex;
+        gap: 15px;
+      }
+
+      form input {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      form button {
+        padding: 10px 15px;
+        font-size: 16px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      form button:hover {
+        background: #0056b3;
+      }
+
+      h2 {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .grid {
+        max-width: 800px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 15px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0 0 8px #bbb;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.03);
+      }
+
+      .card img {
+        max-width: 100%;
+        object-fit: contain;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+      }
+
+      .card p {
+        flex-grow: 1;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .card .preco {
+        font-weight: bold;
+        font-size: 16px;
+        color: #27ae60;
+      }
+
+      .fa-solid,
+      .fa-trash {
+        background-color: transparent;
+      }
+
+      .card button {
+        border: none;
+        padding: 6px 8px;
+        background-color: transparent;
+        background-color: lightcoral;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .card button:hover {
+        background-color: red;
+      }
+
+      @media (max-width: 1240px) {
+        form {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        form button {
+          align-self: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Cadastro de Produtos</h1>
+      <form id="form-produto">
+        <input type="text" id="imagem" placeholder="URL da imagem" required />
+        <input
+          type="text"
+          id="nome"
+          placeholder="Nome do produto"
+          required
+        />
+        <input type="text" id="descricao" placeholder="Descrição" required />
+        <input
+          type="number"
+          id="preco"
+          placeholder="Preço (ex: 19.90)"
+          min="0"
+          step="0.1"
+          required
+        />
+        <button type="submit">Cadastrar Produto</button>
+      </form>
+    </header>
+
+    <main>
+      <h2>Produtos</h2>
+      <div class="grid" id="grid-produtos">
+      </div>
+    </main>
+
+    <script>
+        const form = document.getElementById("form-produto");
+        const grid = document.getElementById("grid-produtos");
+
+        
+    
+    </script>
+  </body>
+</html>

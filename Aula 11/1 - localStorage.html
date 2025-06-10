@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exemplo LocalStorage</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      color: #333;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Digite seu nome:</h2>
+  <input type="text" id="nome" placeholder="Seu nome" />
+  <div>
+    <button id="salvarBtn">Salvar</button>
+    <button id="removerBtn">Remover</button>
+  </div>
+
+  <h3 id="mensagem"></h3>
+
+  <script>
+    const inputNome = document.getElementById("nome");
+    const salvarBtn = document.getElementById("salvarBtn");
+    const removerBtn = document.getElementById("removerBtn");
+    const mensagem = document.getElementById("mensagem");
+
+    salvarBtn.addEventListener("click", () => {
+      const nome = inputNome.value;
+
+      if (!nome) {
+        alert("Digite um nome.");
+        return;
+      }
+      localStorage.setItem("nome", nome);
+      mensagem.textContent = `Nome salvo: ${nome}`;
+      inputNome.value = "";
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const nomeSalvo = localStorage.getItem("nome");
+      if (nomeSalvo) {
+        mensagem.textContent = `Nome salvo: ${nomeSalvo}`;
+      }
+    });
+
+    removerBtn.addEventListener("click", () => {
+      localStorage.removeItem("nome");
+      mensagem.textContent = "Nome removido!";
+    });
+
+  </script>
+</body>
+</html>

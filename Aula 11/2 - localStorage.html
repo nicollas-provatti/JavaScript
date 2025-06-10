@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f7;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      background-color: #27ae60;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #219150;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 300px;
+      margin-top: 20px;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .remover {
+      background-color: #e74c3c;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .remover:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Lista de Tarefas</h2>
+  <input type="text" id="inputTarefa" placeholder="Digite uma tarefa" />
+  <button id="btnAdicionar">Adicionar</button>
+
+  <ul id="listaTarefas">
+    
+  </ul>
+
+  <script>
+    const inputTarefa = document.getElementById("inputTarefa");
+    const listaTarefas = document.getElementById("listaTarefas");
+    const btnAdicionar = document.getElementById("btnAdicionar");
+
+    document.addEventListener("DOMContentLoaded", carregarTarefas);
+
+    function carregarTarefas() {
+      const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+      tarefas.forEach(tarefa => {
+        criarElementoTarefa(tarefa);
+      });
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        adicionarTarefa();
+      }
+    })
+
+    btnAdicionar.addEventListener("click", adicionarTarefa);
+
+    function adicionarTarefa() {
+      const tarefa = inputTarefa.value;
+      if (!tarefa){
+        alert("Digite um tarefa!");
+        return;
+      }
+      criarElementoTarefa(tarefa);
+      salvarTarefa(tarefa);
+      inputTarefa.value = "";
+    }
+
+    function criarElementoTarefa(tarefa) {
+      const li = document.createElement("li");
+      li.textContent = tarefa;
+
+      const button = document.createElement("button");
+      button.classList.add("remover");
+      button.textContent = "Remover";
+      button.addEventListener("click", () => {
+        li.remove();
+        removerTarefa(tarefa);
+      });
+
+      li.appendChild(button);
+      listaTarefas.appendChild(li);
+    }
+
+    function salvarTarefa(tarefa) {
+      const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+      tarefas.push(tarefa);
+      localStorage.setItem("tarefas", JSON.stringify(tarefas));
+    }
+
+    function removerTarefa(texto) {
+      const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+      const tarefaFiltradas = tarefas.filter(tarefa => tarefa !== texto);
+      localStorage.setItem("tarefas", JSON.stringify(tarefaFiltradas));
+    }
+    
+  </script>
+</body>
+</html>
