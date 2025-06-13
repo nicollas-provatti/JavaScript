@@ -1,4 +1,4 @@
-# 📘 Aula 11 - Assincronismo, Promises, Async/Await e Fetch API
+# 📘 Aula 12 - Assincronismo, Promises, Async/Await e Fetch API
 
 ### 🔵 Diferença entre execução síncrona e assíncrona
 
