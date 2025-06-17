@@ -100,10 +100,10 @@ O objetivo deste projeto é desenvolver uma aplicação web que consome uma API 
 ✅ **Ideal para:** listar e buscar usuários, exibir avatars, nomes e e-mails.
 
 ### 🔗 3. The Dog API
-🔸 **URL:** https://thedogapi.com
-🔸 **Autenticação:** Sim, token gratuito fácil de obter.
-🔸 **Descrição:** Dados e imagens de várias raças de cachorro.
-🔸 **Possibilidades:**
+🔸 **URL:** https://thedogapi.com <br> 
+🔸 **Autenticação:** Sim, token gratuito fácil de obter. <br>
+🔸 **Descrição:** Dados e imagens de várias raças de cachorro. <br>
+🔸 **Possibilidades:** <br>
 
 - Buscar imagens de cães por raça;
 
@@ -112,10 +112,10 @@ O objetivo deste projeto é desenvolver uma aplicação web que consome uma API 
 ✅ **Ideal para:** criar uma galeria de cachorros ou filtro por raça.
 
 ### 🔗 4. The Cat API
-🔸 **URL:** https://thecatapi.com
-🔸 **Autenticação:** Sim, token gratuito.
-🔸 **Descrição:** API para imagens e informações de gatos.
-🔸 **Possibilidades:**
+🔸 **URL:** https://thecatapi.com <br>
+🔸 **Autenticação:** Sim, token gratuito. <br>
+🔸 **Descrição:** API para imagens e informações de gatos. <br>
+🔸 **Possibilidades:** <br>
 
 - Gerar imagens aleatórias de gatos;
 
@@ -124,10 +124,10 @@ O objetivo deste projeto é desenvolver uma aplicação web que consome uma API 
 ✅ **Ideal para:** galeria de gatos fofos.
 
 ### 🔗 5. OpenWeatherMap (Weather API)
-🔸 **URL:** https://openweathermap.org/api
-🔸 **Autenticação:** Sim, exige chave (gratuita via cadastro).
-🔸 **Descrição:** Retorna dados climáticos para qualquer cidade do mundo.
-🔸 **Possibilidades:**
+🔸 **URL:** https://openweathermap.org/api <br>
+🔸 **Autenticação:** Sim, exige chave (gratuita via cadastro). <br>
+🔸 **Descrição:** Retorna dados climáticos para qualquer cidade do mundo. <br>
+🔸 **Possibilidades:** <br>
 
 - Buscar o clima atual de uma cidade;
 
@@ -136,10 +136,10 @@ O objetivo deste projeto é desenvolver uma aplicação web que consome uma API 
 ✅ **Ideal para:** app de previsão do tempo.
 
 ### 🔗 6. Unsplash API
-🔸 **URL:** https://unsplash.com/documentation
-🔸 **Autenticação:** Sim, exige chave gratuita.
-🔸 **Descrição:** Busca e exibe imagens profissionais do Unsplash.
-🔸 **Possibilidades:**
+🔸 **URL:** https://unsplash.com/documentation <br>
+🔸 **Autenticação:** Sim, exige chave gratuita. <br>
+🔸 **Descrição:** Busca e exibe imagens profissionais do Unsplash. <br>
+🔸 **Possibilidades:** <br>
 
 - Buscar imagens por palavra-chave;
 
@@ -148,10 +148,10 @@ O objetivo deste projeto é desenvolver uma aplicação web que consome uma API 
 ✅ **Ideal para:** app de pesquisa de imagens.
 
 ### 🔗 7. PokéAPI
-🔸 **URL:** https://pokeapi.co/
-🔸 **Autenticação:** Não precisa.
-🔸 **Descrição:** API completa de dados dos Pokémons.
-🔸 **Possibilidades:**
+🔸 **URL:** https://pokeapi.co/ <br>
+🔸 **Autenticação:** Não precisa. <br>
+🔸 **Descrição:** API completa de dados dos Pokémons. <br>
+🔸 **Possibilidades:** <br>
 
 - Buscar Pokémons por nome ou ID;
 
@@ -160,30 +160,30 @@ O objetivo deste projeto é desenvolver uma aplicação web que consome uma API 
 ✅ **Ideal para:** Pokédex simples no navegador.
 
 ### 🔗 8. SpaceX API
-🔸 **URL:** https://github.com/r-spacex/SpaceX-API
-🔸 **Autenticação:** Não precisa.
-🔸 **Descrição:** Dados públicos da SpaceX.
-🔸 **Possibilidades:**
+🔸 **URL:** https://github.com/r-spacex/SpaceX-API <br>
+🔸 **Autenticação:** Não precisa. <br>
+🔸 **Descrição:** Dados públicos da SpaceX. <br>
+🔸 **Possibilidades:** <br>
 
 - Listar lançamentos de foguetes, naves, missões.
 
 ✅ **Ideal para:** mostrar cards com informações sobre missões espaciais.
 
 ### 🔗 9. BoredAPI
-🔸 **URL:** https://www.boredapi.com/api/activity/
-🔸 **Autenticação:** Não precisa.
-🔸 **Descrição:** Retorna atividades aleatórias para fazer quando está entediado.
-🔸 **Possibilidades:**
+🔸 **URL:** https://www.boredapi.com/api/activity/ <br>
+🔸 **Autenticação:** Não precisa. <br>
+🔸 **Descrição:** Retorna atividades aleatórias para fazer quando está entediado. <br>
+🔸 **Possibilidades:** <br>
 
 - Exibir uma atividade aleatória na tela.
 
 ✅ **Ideal para:** mini-app divertido de sugestões.
 
 ### 🔗 10. Advice Slip API
-🔸 **URL:** https://api.adviceslip.com
-🔸 **Autenticação:** Não precisa.
-🔸 **Descrição:** Retorna frases/conselhos motivacionais aleatórios.
-🔸 **Possibilidades:**
+🔸 **URL:** https://api.adviceslip.com <br>
+🔸 **Autenticação:** Não precisa. <br>
+🔸 **Descrição:** Retorna frases/conselhos motivacionais aleatórios. <br>
+🔸 **Possibilidades:** <br>
 
 - Gerar e mostrar um conselho aleatório.
 
