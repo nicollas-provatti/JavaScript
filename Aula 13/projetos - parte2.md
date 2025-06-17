@@ -7,6 +7,7 @@
 O objetivo deste projeto é desenvolver uma aplicação web que consome uma API pública RESTful e exibe os dados de forma dinâmica e organizada na interface do usuário. O foco principal é praticar a manipulação de requisições assíncronas utilizando Fetch API ou Axios, bem como o tratamento de dados recebidos (em formato JSON) e sua renderização no DOM.
 
 **📜 Requisitos Gerais:**
+
 **1. Escolha de API:**
 
 - O aluno deve escolher uma API pública da lista fornecida.
