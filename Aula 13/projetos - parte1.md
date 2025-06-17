@@ -7,6 +7,7 @@
 Construir uma aplicação simples de gerenciamento de tarefas diárias usando JavaScript e LocalStorage para persistir os dados. O usuário poderá cadastrar, visualizar, editar, marcar como concluída e excluir tarefas.
 
 **🔧 Funcionalidades Obrigatórias:**
+
 **1. Adicionar nova tarefa**
 
 - Campos: Título e Descrição.
@@ -76,6 +77,7 @@ Construir uma aplicação simples de gerenciamento de tarefas diárias usando Ja
 Construir uma aplicação para organizar itens de compra usando JavaScript e LocalStorage. O usuário poderá adicionar, editar, marcar como comprado e excluir itens da lista.
 
 **🔧 Funcionalidades Obrigatórias:**
+
 **1. Adicionar novo item à lista**
 
 - Campos:
@@ -151,6 +153,7 @@ Construir uma aplicação para organizar itens de compra usando JavaScript e Loc
 Desenvolver uma mini agenda digital para armazenar contatos pessoais, com suporte para adicionar, editar, excluir e pesquisar contatos. Os dados devem ser salvos no LocalStorage para persistência.
 
 **🔧 Funcionalidades Obrigatórias**
+
 **1. Adicionar novo contato**
 
 - Campos obrigatórios:
@@ -219,6 +222,7 @@ Desenvolver uma mini agenda digital para armazenar contatos pessoais, com suport
 Desenvolver um sistema para gerenciar uma coleção de livros pessoais, permitindo controlar quais livros foram lidos e quais ainda faltam ler. Os dados devem ser armazenados no LocalStorage.
 
 **🔧 Funcionalidades Obrigatórias**
+
 **1. Adicionar novo livro à biblioteca**
 
 - Campos obrigatórios:
@@ -290,6 +294,7 @@ Desenvolver um sistema para gerenciar uma coleção de livros pessoais, permitin
 Criar um sistema para registrar e acompanhar despesas pessoais, ajudando o usuário a visualizar e organizar seus gastos. Os dados devem ser armazenados no LocalStorage.
 
 **🔧 Funcionalidades Obrigatórias**
+
 **1. Adicionar nova despesa**
 
 - Campos obrigatórios:
