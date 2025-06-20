@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Cadastro de Usuários</title>
+</head>
+<body>
+
+  <h1>Cadastro de Usuários</h1>
+
+  <form id="form-usuario">
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button type="submit">Adicionar Usuário</button>
+  </form>
+
+  <ul id="lista-usuarios">
+    
+  </ul>
+
+  <!-- Template de usuário -->
+  <template id="template-usuario">
+    <li class="usuario">
+      <div class="usuario-info">
+        <img src="" alt="Avatar">
+        <div>
+          <p class="nome"></p>
+          <p class="email"></p>
+        </div>
+      </div>
+      <div>
+        <button class="editar">Editar</button>
+        <button class="remover">Remover</button>
+      </div>
+    </li>
+  </template>
+
+  <!-- https://i.pravatar.cc/150?u=100 -->
+
+  <script src="aula.js"></script>
+
+</body>
+</html>

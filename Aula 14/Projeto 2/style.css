@@ -1,0 +1,110 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #4A90E2;
+  text-align: center;
+}
+
+/* Container dos botões */
+.botoes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Estilização dos botões */
+button {
+  padding: 12px 20px;
+  background-color: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Área de resposta da API */
+#resposta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Card de cada item retornado da API */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 250px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;  /* circular */
+  border: 2px solid #4a90e2; /* borda azul, por exemplo */
+  object-fit: cover; /* garante que a imagem preencha o círculo */
+  align-self: center;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #4A90E2;
+  margin-bottom: 10px;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Para imagens (usadas em /photos) */
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de API com Token</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #0077cc;
+        }
+        #btnCarregar {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #btnCarregar:hover {
+            background-color: #005fa3;
+        }
+        #resposta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .user-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+        .user-card img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consumo de API com Token</h1>
+    <button id="btnCarregar">Carregar Usuários</button>
+    <div id="resposta"></div>
+
+    <script>
+        const API_URL = "https://reqres.in/api/users?page=1";
+        const API_KEY = "reqres-free-v1";
+
+        async function consumoAPI() {
+            const respostaDiv = document.getElementById('resposta');
+            respostaDiv.innerHTML = 'Carregando dados...';
+
+            try {
+                const response = await fetch(API_URL, {
+                    headers: {
+                        'x-api-key': API_KEY
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erro na requisição: ' + response.status);
+                }
+
+                const data = await response.json();
+                mostrarUsuarios(data.data);
+            } catch (error) {
+                respostaDiv.innerHTML = `<p class="error">Erro ao carregar os dados: ${error.message}</p>`;
+                console.log(error);
+            }
+        }
+
+        function mostrarUsuarios(usuarios) {
+            const respostaDiv = document.getElementById('resposta');
+            respostaDiv.innerHTML = ''; // Limpa conteúdo anterior
+
+            usuarios.forEach(usuario => {
+                const userCard = document.createElement('div');
+                userCard.classList.add('user-card');
+                userCard.innerHTML = `
+                    <img src="${usuario.avatar}" alt="Avatar de ${usuario.first_name}">
+                    <h3>${usuario.first_name} ${usuario.last_name}</h3>
+                    <p>Email: ${usuario.email}</p>
+                `;
+                respostaDiv.appendChild(userCard);
+            });
+        }
+
+        document.getElementById('btnCarregar').addEventListener('click', consumoAPI);
+    </script>
+</body>
+</html>
