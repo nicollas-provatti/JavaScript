@@ -73,19 +73,7 @@ O objetivo deste projeto é desenvolver uma aplicação web que consome uma API 
 
 ---
 
-## 🔹 Lista das APIs 
-
-### 🔗 1. JSONPlaceholder
-🔸 **URL:** https://jsonplaceholder.typicode.com <br>
-🔸 **Autenticação:** Não precisa. <br>
-🔸 **Descrição:** API fake para testes e protótipos. Retorna posts, comentários, usuários, álbuns, etc. <br>
-🔸 Possibilidades: <br>
-
-- Listar posts, usuários, comentários, fotos, álbuns, todos;
-
-- Filtrar e exibir detalhes.
-
-✅ **Ideal para:** exibição em cards (ex: lista de posts, galeria de fotos, lista de usuários com avatars).
+## 🔹 Lista das APIs
 
 ### 🔗 2. ReqRes API
 🔸 **URL:** https://reqres.in/ <br>
