@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cronômetro com formato mm:ss</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #f0f0f0;
+    }
+
+    #timer {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #start { background-color: #4CAF50; color: white; }
+    #pause { background-color: #f0ad4e; color: white; }
+    #reset { background-color: #d9534f; color: white; }
+  </style>
+</head>
+<body>
+
+  <h1>Cronômetro</h1>
+  <div id="timer">00:00</div>
+  <button id="start">Iniciar</button>
+  <button id="pause">Pausar</button>
+  <button id="reset">Resetar</button>
+
+  <script>
+    let totalSegundos = 0;
+    let intervalo = null;
+
+    const timer = document.getElementById('timer');
+    const startBtn = document.getElementById('start');
+    const pauseBtn = document.getElementById('pause');
+    const resetBtn = document.getElementById('reset');
+
+    // Função para formatar o tempo mm:ss
+    function formatarTempo(segundos) {
+      const min = Math.floor(segundos / 60);
+      const seg = segundos % 60;
+      // adiciona zero à esquerda se menor que 10
+      const minFormatado = min < 10 ? '0' + min : min;
+      const segFormatado = seg < 10 ? '0' + seg : seg;
+      return `${minFormatado}:${segFormatado}`;
+    }
+
+    function atualizarTimer() {
+      totalSegundos++;
+      timer.textContent = formatarTempo(totalSegundos);
+    }
+
+    function iniciarCronometro() {
+      if (intervalo) return;
+      intervalo = setInterval(atualizarTimer, 1000);
+    }
+
+    function pausarCronometro() {
+      clearInterval(intervalo);
+      intervalo = null;
+    }
+
+    function resetarCronometro() {
+      clearInterval(intervalo);
+      intervalo = null;
+      totalSegundos = 0;
+      timer.textContent = formatarTempo(totalSegundos);
+    }
+
+    startBtn.addEventListener('click', iniciarCronometro);
+    pauseBtn.addEventListener('click', pausarCronometro);
+    resetBtn.addEventListener('click', resetarCronometro);
+  </script>
+
+</body>
+</html>
