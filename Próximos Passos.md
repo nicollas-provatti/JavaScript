@@ -76,7 +76,7 @@ Com o back pronto (ou mockado), o front já sabe o formato das respostas da API 
 
 ---
 
-#### 4. Quem paga pela hospedagem: o cliente ou o programador? O programador pode cobrar uma mensalidade de manutenção ou apenas por serviços pontuais, conforme acordo?
+### 4. Quem paga pela hospedagem: o cliente ou o programador? O programador pode cobrar uma mensalidade de manutenção ou apenas por serviços pontuais, conforme acordo?
 
 * Sempre o cliente paga (ou fornece o cartão de crédito dele para o serviço).
 
@@ -90,7 +90,7 @@ Com o back pronto (ou mockado), o front já sabe o formato das respostas da API 
 
 ---
 
-#### 5. Existem normas ou regulamentações do Google ou de algum órgão para hospedar e publicar um site de acordo com regras oficiais?
+### 5. Existem normas ou regulamentações do Google ou de algum órgão para hospedar e publicar um site de acordo com regras oficiais?
 
 Em geral, não existe uma norma específica única do Google ou de um órgão oficial que regule como exatamente você deve hospedar e publicar um site — mas há várias regras, boas práticas e leis que você precisa conhecer e seguir para estar dentro da lei e evitar problemas.
 
